@@ -129,13 +129,13 @@ def compute_branch_currents_and_voltages(Vabcn, Vabco,
     current_branch_left_c = Vabco[2] / equiv_phase_left
     current_branch_right_c = Vabco[2] / equiv_phase_right
 
-    current_sum_branch_left = np.round(current_branch_left_a +
-                                       current_branch_left_b +
-                                       current_branch_left_c)
+    current_sum_branch_left = (current_branch_left_a + 
+                               current_branch_left_b + 
+                               current_branch_left_c)
 
-    current_sum_branch_right = np.round(current_branch_right_a +
-                                        current_branch_right_b +
-                                        current_branch_right_c)
+    current_sum_branch_right = (current_branch_right_a + 
+                                current_branch_right_b +
+                                current_branch_right_c)
 
     # voltage in bad branch (in equivalente branch)
     voltage_branch_left_bad = Vabco[0]
@@ -164,5 +164,6 @@ def compute_branch_currents_and_voltages(Vabcn, Vabco,
         current_sum_branch_left, current_sum_branch_right,
         voltage_branch_left_bad, current_equiv_string_bad,
         Vcu, current_bad_unit, voltages_parallels_units_bad,
-        voltage_parallels_internal_group_bad
+        voltage_parallels_internal_group_bad,
+        current_sum_branch_left, current_sum_branch_right
     )
